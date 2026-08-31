@@ -52,7 +52,10 @@ export default function Search() {
       {isOpen &&
         debouncedQuery.trim() !== "" &&
         (filteredProducts.length > 0 ? (
-          <SearchResults products={filteredProducts} />
+          <SearchResults
+            products={filteredProducts}
+            onProductClick={() => setIsOpen(false)}
+          />
         ) : (
           <p className="absolute mt-2 w-full rounded-md border bg-white p-2 shadow">
             No products found.

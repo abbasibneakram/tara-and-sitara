@@ -2,8 +2,7 @@ import MobileMenu from "./MobileMenu";
 import Navigation from "./Navigation";
 import Logo from "./Logo";
 import { navigationItems } from "./navigationData";
-// import SearchInput from "@/src/features/search/components/SearchInput";
-import Search from "@/src/features/search/components/Search";
+import Search from "@/features/search/components/Search";
 
 export default function Navbar() {
   return (
@@ -14,11 +13,10 @@ export default function Navbar() {
         <Navigation items={navigationItems} />
 
         <div className="flex items-center gap-4">
-  <Search />
-  <button type="button">Cart</button>
-  <button type="button">Account</button>
-</div>
-
+          <Search />
+          <button type="button">Cart</button>
+          <button type="button">Account</button>
+        </div>
       </div>
 
       <div className="flex items-center justify-between md:hidden">
