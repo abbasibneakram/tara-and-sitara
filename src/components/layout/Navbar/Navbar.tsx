@@ -3,6 +3,8 @@ import Navigation from "./Navigation";
 import Logo from "./Logo";
 import { navigationItems } from "./navigationData";
 import Search from "@/features/search/components/Search";
+import CartButton from "@/features/cart/components/CartButton";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
@@ -14,7 +16,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-4">
           <Search />
-          <button type="button">Cart</button>
+          <CartButton />
           <button type="button">Account</button>
         </div>
       </div>

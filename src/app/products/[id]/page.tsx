@@ -1,6 +1,7 @@
 import { products } from "@/features/catalog/data/products";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import AddToCartButton from "@/features/cart/components/AddToCartButton";
 
 interface ProductPageProps {
   params: Promise<{
@@ -35,6 +36,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </p>
 
         <p className="mt-4 text-gray-600">{product.description}</p>
+        <AddToCartButton product={product} />
       </div>
     </main>
   );

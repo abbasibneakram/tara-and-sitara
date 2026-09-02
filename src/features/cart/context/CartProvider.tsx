@@ -13,13 +13,30 @@ export default function CartProvider({ children }: CartProviderProps) {
   const [items, setItems] = useState<CartItem[]>([]);
 
   const addItem = (product: Product) => {
-    setItems((currentItems) => [
-      ...currentItems,
-      {
-        product,
-        quantity: 1,
-      },
-    ]);
+    setItems((currentItems) => {
+      const existingItem = currentItems.find(
+        (item) => item.product.id === product.id,
+      );
+
+      if (existingItem) {
+        return currentItems.map((item) =>
+          item.product.id === product.id
+            ? {
+                ...item,
+                quantity: item.quantity + 1,
+              }
+            : item,
+        );
+      }
+
+      return [
+        ...currentItems,
+        {
+          product,
+          quantity: 1,
+        },
+      ];
+    });
   };
 
   return (
